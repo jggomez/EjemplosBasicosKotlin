@@ -30,9 +30,15 @@ fun menu() {
             3 -> consignar()
             4 -> retirar()
             5 -> imprimirCuentas()
+            6 -> promediarCuentas()
         }
 
-    } while (opcion != 6)
+    } while (opcion != 7)
+}
+
+fun promediarCuentas() {
+    val promedio = lstCuentas.map { it.saldo }.average()
+    println("El promedio de las cuentas es $promedio")
 }
 
 fun imprimirCuentas() {
