@@ -89,7 +89,7 @@ fun main(args: Array<String>) {
         println("2. Crear Entrada")
         println("3. Crear Salida")
         println("4. Reportes")
-        println("5. Salir del otro gym")
+        println("5. Salir del Gym")
         opcion = readLine()?.toInt() ?: 5
 
         when (opcion) {
