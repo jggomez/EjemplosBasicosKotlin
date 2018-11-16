@@ -81,7 +81,13 @@ fun consultarCuenta() {
     print("Digite su Identificación: ")
     val id = readLine() ?: ""
 
-    val cuenta = lstCuentas.firstOrNull { it.id == id }
+    val cuenta = lstCuentas.firstOrNull {
+        it.id == id && it.saldo > 0
+    }
+
+    lstCuentas.firstOrNull {
+        it.id == id && it.saldo > 0
+    }
 
     println(cuenta?.imprimir() ?: "La cuenta no existe")
 }
