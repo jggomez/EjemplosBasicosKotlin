@@ -76,6 +76,34 @@ class Gym {
         }
     }
 
+    fun contarIngresosUsuarioxDia() {
+
+        println("Digite Identificación: ")
+        val id = readLine() ?: ""
+
+        println("Digite fecha: ")
+        val fecha = readLine() ?: ""
+
+        lstUsuarioGym.firstOrNull { it.id == id }?.let { usuario ->
+            val numRegistros = usuario.registros.filter { it.fecha == fecha }.count()
+            println("Ingresos del usuario ${id} para la fecha ${fecha} fueron ${numRegistros} veces")
+        }
+
+    }
+
+    fun contarHombresyMujeres() {
+        val numHombres = lstUsuarioGym.filter { it.genero == Genero.Masculino }.count()
+        val numMujeres = lstUsuarioGym.filter { it.genero == Genero.Femenino }.count()
+
+        println("El número de Hombres el el gym es de ${numHombres}")
+        println("El número de Mujeres el el gym es de ${numMujeres}")
+    }
+
+    fun contarUsuariosMayores50() {
+        val numMayor50 = lstUsuarioGym.count { it.edad > 50 }
+        println("Usuarios mayores a 50 años => ${numMayor50}")
+    }
+
 }
 
 fun main(args: Array<String>) {
@@ -88,17 +116,21 @@ fun main(args: Array<String>) {
         println("1. Crear usuario")
         println("2. Crear Entrada")
         println("3. Crear Salida")
-        println("4. Usuario en una semana")
-        println("5. Salir del Gym")
-        opcion = readLine()?.toInt() ?: 5
+        println("4. Ingresos de usuario por día")
+        println("5. Usuarios Hombres y Mujeres")
+        println("6. Usuarios mayores a 50 años")
+        println("7. Salir del Gym")
+        opcion = readLine()?.toInt() ?: 7
 
         when (opcion) {
             1 -> gym.crearUsuario()
             2 -> gym.crearRegistroEntrada()
             3 -> gym.crearRegistroSalida()
-            //4 -> gym.contIngresosUsuario()
+            4 -> gym.contarIngresosUsuarioxDia()
+            5 -> gym.contarHombresyMujeres()
+            6 -> gym.contarUsuariosMayores50()
         }
 
-    } while (opcion != 5)
+    } while (opcion != 7)
 
 }
