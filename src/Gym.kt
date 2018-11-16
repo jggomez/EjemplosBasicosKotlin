@@ -88,7 +88,7 @@ fun main(args: Array<String>) {
         println("1. Crear usuario")
         println("2. Crear Entrada")
         println("3. Crear Salida")
-        println("4. Reportes")
+        println("4. Usuario en una semana")
         println("5. Salir del Gym")
         opcion = readLine()?.toInt() ?: 5
 
@@ -96,10 +96,9 @@ fun main(args: Array<String>) {
             1 -> gym.crearUsuario()
             2 -> gym.crearRegistroEntrada()
             3 -> gym.crearRegistroSalida()
-            4 -> gym.crearRegistroSalida()
+            //4 -> gym.contIngresosUsuario()
         }
 
     } while (opcion != 5)
 
 }
-
