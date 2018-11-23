@@ -1,4 +1,4 @@
-package poo
+package poo.polimorfismo
 
 interface IFigura {
 

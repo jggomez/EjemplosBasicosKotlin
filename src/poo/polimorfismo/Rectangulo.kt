@@ -1,6 +1,6 @@
-package poo
+package poo.polimorfismo
 
-class Triangulo : IFigura {
+class Rectangulo : IFigura {
 
     override fun calcularArea(): Int {
         println("Altura:")
@@ -9,10 +9,10 @@ class Triangulo : IFigura {
         println("Base:")
         val base: Int = readLine()?.toInt() ?: 0
 
-        return (altura * base) / 2
+        return altura * base
     }
 
     override fun imprimirNombre(): String {
-        return "Triangulo"
+        return "Rectangulo"
     }
 }
